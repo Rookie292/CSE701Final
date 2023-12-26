@@ -16,7 +16,13 @@ int main()
         ifstream input("demo.txt");
         if (!input.is_open())
         {
-            cout << "Error opening file!";
+            cout << "Error opening file! You should create a demo.txt file to give the input and there is a demo.\n";
+            cout << "String in demo.txt:\n" << "1234\n" << "0\n" << "+\n";
+            cout << "The output in the terminal will be like\n";
+            BigInt demo1(1234);
+            BigInt demo2;
+            cout << demo1 << "+" << demo2 << '\n';
+            cout << "Result: " << demo1 + demo2 << '\n';
             return -1;
         }
         string s;             // a string to hold each line
