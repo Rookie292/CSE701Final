@@ -9,8 +9,69 @@
 
 using namespace std;
 
+void demo()
+
+{   //two constructors
+    BigInt num1;
+    BigInt num2(-1234678291346789);
+    cout << "num1:"<<num1<<"  ";
+    cout << "num2:"<<num2<<"\n";
+    // + and =+ overload
+    cout << "num1 + num2 = "<< num1 + num2<<'\n';
+    cout  << "num1 += num2 ";
+    num1+=num2;
+    cout << "num1:" << num1<< '\n' ;
+    // constructor from string
+    try
+    {
+        BigInt num3("+348d7793fff");
+    }
+    catch (const exception &e)
+    {
+        cout << "Exception caught: " << e.what() << endl;
+    }
+    // constructor from string
+    BigInt num4("+83648264728920303");
+    // = overload
+    num2 = num4;
+    cout << "num1:"<<num1<<"  "<< "num2:"<<num2<<"  "<< "num4:"<<num4<<"\n";
+    // - and -= overload
+    cout  << "num1 -= num2 ";
+    num1-=num2;
+    cout << "num1:" << num1<< '\n' ;
+    cout << "num1 - num2 = "<< num1 - num2<<'\n';
+    // * and *= overload
+    BigInt num5(-1);
+    cout << "num1:"<<num1<<"  "<< "num5:"<<num5<<"\n";
+    cout  << "num1 *= num5 ";   
+    num1*=num5;
+    cout << "num1:" << num1<< '\n' ;
+    BigInt num6 = num1 * num5;
+    cout << "num6 = num1 * num5\n";
+    cout << "num6:" << num6<< '\n' ;
+    // - overload
+    -num6;
+    cout << "num6:" << num6<< '\n' ;
+    cout << "num1:"<<num1<<"  "<< "num2:"<<num2<<"  "<< "num4:"<<num4<<"  "<< "num5:"<<num5<<"  "<< "num6:"<<num6<<"\n";
+    // comparison operator overload
+    cout << "num2 == num4 result:"<<(num2 == num4)<<'\n';
+    num2 = 0;
+    cout << "num1:"<<num1<<"  "<< "num2:"<<num2<<"  "<< "num4:"<<num4<<"  "<< "num5:"<<num5<<"  "<< "num6:"<<num6<<"\n";
+    cout << "num2 != num4 result:"<<(num2 != num4)<<'\n';
+    cout << "num1 >= num4 result:"<<(num1 >= num4)<<'\n';
+    cout << "num1 <= num4 result:"<<(num1 <= num4)<<'\n';
+    num1 = "0";
+    cout << "num1:"<<num1<<"  "<< "num2:"<<num2<<"  "<< "num4:"<<num4<<"  "<< "num5:"<<num5<<"  "<< "num6:"<<num6<<"\n";
+    cout << "num1 > num2 result:"<<(num1 > num2)<<'\n';
+    cout << "num1 < num5 result:"<<(num1 > num5)<<'\n';
+    cout << endl;
+}
+
 int main()
 {
+    //here is a demo
+    demo();
+    // the following shows that read input from demo.txt file.
     try
     {
         ifstream input("demo.txt");

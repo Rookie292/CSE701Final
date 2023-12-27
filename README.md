@@ -125,28 +125,34 @@ Next step is double for loop. The outer loop iterates over each digit of the cur
 The last step is to remove redundant zeros which is at the end of the `numbers` vector and update current object from the `temp` vector.
 ## Examples
 ### How to use the BigInt class
-The BigInt project read input from a txt file `demo.txt`. In the current `BigInt` class， all the operators are either unary or binary operators. So in the `demo.txt` file, the first two lines should be the Big Integers that participate in the calculation, and the third line should be the operator if it's a binary operators. If it's a unary operator, the first line is a big integer and the second line is that operator. The output will be printed into the terminal.
+There is a demo function in demo.cpp. There are some hard codes in that function to show how to use each constructor and overloaded operator in BigInt class. The followings are the output of the demo function.
+```
+num1:0  num2:-1234678291346789
+num1 + num2 = -1234678291346789
+num1 += num2 num1:-1234678291346789
+Exception caught: Invalid input: contains non-digit character
+num1:-1234678291346789  num2:83648264728920303  num4:83648264728920303
+num1 -= num2 num1:-84882943020267092
+num1 - num2 = -168531207749187395
+num1:-84882943020267092  num5:-1
+num1 *= num5 num1:84882943020267092
+num6 = num1 * num5
+num6:-84882943020267092
+num6:84882943020267092
+num1:84882943020267092  num2:83648264728920303  num4:83648264728920303  num5:-1  num6:84882943020267092
+num2 == num4 result:1
+num1:84882943020267092  num2:0  num4:83648264728920303  num5:-1  num6:84882943020267092
+num2 != num4 result:1
+num1 >= num4 result:1
+num1 <= num4 result:0
+num1:0  num2:0  num4:83648264728920303  num5:-1  num6:84882943020267092
+num1 > num2 result:0
+num1 < num5 result:1
+```
+
+The BigInt project also can read input from a txt file `demo.txt`. In the current `BigInt` class， all the operators are either unary or binary operators. So in the `demo.txt` file, the first two lines should be the Big Integers that participate in the calculation, and the third line should be the operator if it's a binary operators. If it's a unary operator, the first line is a big integer and the second line is that operator. The output will be printed into the terminal.
 ### Some examples of possible inputs and outputs.
-```
-Input:
-999999999999999999999999999999
-1
-+
 
-Output:
-999999999999999999999999999999+1       
-Result: 1000000000000000000000000000000
-```
-```
-Input:
--99999999999999
-1000
-+
-
-Output:
--99999999999999+1000
-Result: -99999999998999
-```
 ```
 Input:
 -99999999999999
@@ -167,16 +173,6 @@ Output:
 Exception caught: Invalid input: contains non-digit character
 ```
 
-```
-Input:
--999462583462656234560234656203465463574236523478563284765
--1000
--
-
-Output:
--999462583462656234560234656203465463574236523478563284765--1000
-Result: -999462583462656234560234656203465463574236523478563283765
-```
 
 ```
 Input:
@@ -186,6 +182,17 @@ Input:
 
 Output:
 123456789*-123456789
+Result: -15241578750190521
+```
+
+```
+Input:
+123456789
+-123456789
+*=
+
+Output:
+123456789*=-123456789
 Result: -15241578750190521
 ```
 
@@ -217,17 +224,5 @@ Input:
 Output:
 12434234
 Result: -12434234
-```
-
-```
-Input:
-123456789
-987654321
-=
-
-Output:
-num1:123456789  num2:987654321
-operation: num1 = num2
-num1:987654321  num2:987654321
 ```
 

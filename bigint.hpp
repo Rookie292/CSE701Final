@@ -216,7 +216,7 @@ BigInt::BigInt(int64_t _num)
     if (_num == 0)
         numbers.push_back(0);
     for (; _num != 0; _num /= 10)
-        numbers.push_back(static_cast<uint8_t>(_num % 10)); // Stores the digits of the number in reverse order, which is convenient for calculation.
+        numbers.push_back(static_cast<uint8_t>(_num % 10)); // stores the digits of the number in reverse order, which is convenient for calculation.
 }
 
 BigInt::BigInt(const BigInt &other) : isNegative(other.isNegative), numbers(other.numbers) {}
@@ -242,7 +242,7 @@ BigInt::BigInt(const string &_numbers)
             throw invalid_argument("Invalid input: contains non-digit character");
         numbers.push_back(static_cast<uint8_t>(_numbers[i] - '0'));
     }
-    reverse(numbers.begin(), numbers.end()); // Stores the digits of the number in reverse order, which is convenient for calculation.
+    reverse(numbers.begin(), numbers.end()); // stores the digits of the number in reverse order, which is convenient for calculation.
 }
 
 bool BigInt::getSign() const
